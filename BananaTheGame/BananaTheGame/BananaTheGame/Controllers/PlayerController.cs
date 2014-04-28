@@ -78,6 +78,13 @@ namespace BananaTheGame.Controllers
                 }
             }
 
+            /// Test move for movePlayerToHere()
+            /// Hold the Z button to test
+            if (GameKeyState.IsKeyPressed(Keys.Z))
+            {
+                movePlayerToHere();
+            }
+
             //if (GameKeyState.IsKeyDown(JumpKey))
             //{
             //    moveVector += Vector3.Up;
@@ -127,6 +134,25 @@ namespace BananaTheGame.Controllers
                 //Vector3 rotatedVector = Vector3.Transform(moveVector, rotationMatrix);
                 SelectedPlayer.AddAcceleration(moveVector);
             }
+        }
+
+        /// <summary>
+        /// Move the player to the tile clicked on
+        /// </summary>
+        public void movePlayerToHere()
+        {
+            Vector2 testDestination = new Vector2(30, 40);
+
+            // THIS IS A TEST TO SEE IF GITHUB WILL UPDATE HERE
+            if (SelectedPlayer.Position.X < testDestination.X)
+                SelectedPlayer.AddAcceleration(new Vector2(1, 0));
+            else if (SelectedPlayer.Position.X > testDestination.X)
+                SelectedPlayer.AddAcceleration(new Vector2(-1, 0));
+
+            if (SelectedPlayer.Position.Y < testDestination.Y)
+                SelectedPlayer.AddAcceleration(new Vector2(0, 1));
+            else if (SelectedPlayer.Position.Y > testDestination.Y)
+                SelectedPlayer.AddAcceleration(new Vector2(0, -1));
         }
 
         public void ResetDefaultKeys()
