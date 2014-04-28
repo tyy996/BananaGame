@@ -138,6 +138,7 @@
     <Compile Include="Terrain\Chunk\Segment.cs" />
     <Compile Include="Terrain\Processor\TileProcessor.cs" />
     <Compile Include="Terrain\Renderers\SimpleRenderer.cs" />
+    <Compile Include="Terrain\World\Segment.cs" />
     <Compile Include="Utilty\SelectionTool.cs" />
     <Compile Include="Utilty\ShapeManager.cs" />
     <Compile Include="Terrain\Tile\TextureHelper.cs" />

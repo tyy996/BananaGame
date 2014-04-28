@@ -16,7 +16,12 @@ namespace BananaTheGame.Control
 
         private static string segmentsPath;
 
-        public static string WorldName { get; set; }
+        public static string WorldName { get; private set; }
+
+        public SaveManager(string worldName)
+        {
+            WorldName = worldName;
+        }
 
         public static void SaveChunk(Chunk chunk)
         {
