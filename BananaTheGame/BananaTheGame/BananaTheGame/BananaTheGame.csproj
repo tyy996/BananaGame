@@ -146,8 +146,8 @@
     <Compile Include="Terrain\World\World.cs" />
     <Compile Include="Terrain\World\WorldSettings.cs" />
     <Compile Include="Utilty\Camera\Camera.cs" />
-    <Compile Include="Utilty\Debug\FrameRateCounter.cs" />
-    <Compile Include="Utilty\Debug\GameDebugger.cs" />
+    <Compile Include="Utilty\Debug2\FrameRateCounter.cs" />
+    <Compile Include="Utilty\Debug2\GameDebugger.cs" />
     <Compile Include="Utilty\Other\Dictionary2.cs" />
     <Compile Include="Utilty\Other\TileHighlight.cs" />
     <Compile Include="Utilty\Other\Vector2Int.cs" />

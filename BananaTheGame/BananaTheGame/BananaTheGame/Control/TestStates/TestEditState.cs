@@ -21,9 +21,13 @@ namespace BananaTheGame.Control
 {
     public class TestEditState : State
     {
+        Chunk chunk;
+        SimpleRenderer renderer;
+
         public override void Load()
         {
-            
+            chunk = new Chunk(Vector2Int.Zero);
+            renderer = new SimpleRenderer();
         }
 
         public override void Update(GameTime gameTime)
