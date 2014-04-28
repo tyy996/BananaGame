@@ -3,7 +3,7 @@ using Microsoft.Xna.Framework;
 
 namespace BananaTheGame.Control
 {
-    public class State
+    public abstract class State
     {
         public bool IsPaused { get; set; }
         public bool IsVisable { get; set; }
