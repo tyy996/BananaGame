@@ -8,12 +8,12 @@ namespace BananaTheGame.Control
         public bool IsPaused { get; set; }
         public bool IsVisable { get; set; }
 
-        public virtual void Load() { }
+        public abstract void Load();
 
-        public virtual void Update(GameTime gameTime) { }
+        public abstract void Update(GameTime gameTime);
 
-        public virtual void Draw(GameTime gameTime) { }
+        public abstract void Draw(GameTime gameTime);
 
-        public virtual void DrawSprite(GameTime gameTime) { }
+        public abstract void DrawSprite(GameTime gameTime);
     }
 }

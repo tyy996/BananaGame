@@ -123,6 +123,7 @@
     <Compile Include="Control\SaveManager.cs" />
     <Compile Include="Control\State.cs" />
     <Compile Include="Control\StateManager.cs" />
+    <Compile Include="Control\TestStates\TestEditState.cs" />
     <Compile Include="Control\TestStates\TestFightState.cs" />
     <Compile Include="Control\TestStates\TestFreeRoamState.cs" />
     <Compile Include="Entities\Entity.cs" />
