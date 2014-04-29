@@ -33,7 +33,7 @@ namespace BananaTheGame.Control
             generator = new TestTerrainGenerator();
             renderer = new SimpleRenderer();
             chunk = new Chunk(new Vector2Int(0, 0));
-            chunk.State = ChunkState.NotSoReady;
+            chunk.State = ChunkState.AwaitingRender;
 
             generator.Generate(chunk);
             chunk.Add(new Tile(TileType.Dirt, new Vector2Int(20, 20)));

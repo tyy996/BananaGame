@@ -98,6 +98,10 @@ namespace BananaTheGame.Terrain.Renderer
                             BananaGame.Graphics.Indices = chunk.IndexBuffer;
                             BananaGame.Graphics.DrawIndexedPrimitives(PrimitiveType.TriangleList, 0, 0, chunk.VertexBuffer.VertexCount, 0, chunk.IndexBuffer.IndexCount / 3);
                         }
+                        if (chunk.State == ChunkState.AwaitingRender)
+                        {
+                            chunk.shapeM.Process(chunk);
+                        }
                         //if (chunk.State == ChunkState.AwaitingRender)
                         //{
                         //    chunk.State = ChunkState.Rendering;
@@ -131,7 +135,7 @@ namespace BananaTheGame.Terrain.Renderer
                         BananaGame.Graphics.Indices = chunk.IndexBuffer;
                         BananaGame.Graphics.DrawIndexedPrimitives(PrimitiveType.TriangleList, 0, 0, chunk.VertexBuffer.VertexCount, 0, chunk.IndexBuffer.IndexCount / 3);
                     }
-                    if (chunk.State == ChunkState.NotSoReady)
+                    if (chunk.State == ChunkState.AwaitingRender)
                     {
                         chunk.shapeM.Process(chunk);
                     }

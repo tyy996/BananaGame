@@ -41,6 +41,7 @@ namespace BananaTheGame
         //SaveManager saveManager;
         TestFreeRoamState roamState;
         TestFightState fightState;
+        TestEditState editState;
         #endregion
 
         public BananaGame()
@@ -68,11 +69,14 @@ namespace BananaTheGame
             ControllerManager.Initialize();
             GameDebugger.Initialize();
             TextureHelper.Init();
+            Segment.Initialize();
             GameSpriteBatch = new SpriteBatch(graphics.GraphicsDevice);
             TileHighlight.Initialize();
             roamState = new TestFreeRoamState();
             fightState = new TestFightState();
-            StateManager.QueueState(fightState);
+            editState = new TestEditState();
+
+            StateManager.QueueState(editState);
             this.IsMouseVisible = true;
             base.Initialize();
         }
@@ -102,6 +106,7 @@ namespace BananaTheGame
         protected override void UnloadContent()
         {
             // TODO: Unload any non ContentManager content here
+            LevelLoader.AbortAll();
         }
 
         /// <summary>

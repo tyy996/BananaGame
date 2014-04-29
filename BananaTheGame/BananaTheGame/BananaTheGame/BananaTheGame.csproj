@@ -120,6 +120,7 @@
     <Compile Include="Controllers\InputStates\MouseClickArgs.cs" />
     <Compile Include="Controllers\PlayerController.cs" />
     <Compile Include="Controllers\SoftController.cs" />
+    <Compile Include="Control\LevelLoader.cs" />
     <Compile Include="Control\SaveManager.cs" />
     <Compile Include="Control\State.cs" />
     <Compile Include="Control\StateManager.cs" />
@@ -135,7 +136,6 @@
     <Compile Include="Program.cs" />
     <Compile Include="BananaGame.cs" />
     <Compile Include="Terrain\Chunk\Chunk.cs" />
-    <Compile Include="Terrain\Chunk\Segment.cs" />
     <Compile Include="Terrain\Processor\TileProcessor.cs" />
     <Compile Include="Terrain\Renderers\SimpleRenderer.cs" />
     <Compile Include="Terrain\World\Segment.cs" />

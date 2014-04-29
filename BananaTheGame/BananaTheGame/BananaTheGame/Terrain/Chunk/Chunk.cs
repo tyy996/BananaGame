@@ -73,6 +73,7 @@ namespace BananaTheGame.Terrain
     public enum ChunkState
     {
         Ready,
-        NotSoReady
+        AwaitingProcessor,
+        AwaitingRender
     }
 }

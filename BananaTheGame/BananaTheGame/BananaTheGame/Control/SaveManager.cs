@@ -11,8 +11,8 @@ namespace BananaTheGame.Control
 {
     public class SaveManager
     {
-        private const string BLANK_SEGMENT_PATH = "Lib\\Worlds\\{0}\\Segments";
-        private const string SEGMENT_FORMAT = "\\Segment{0},{1}.tyy";
+        private const string BLANK_SEGMENT_PATH = "Lib\\Worlds\\{0}\\Chunks";
+        private const string SEGMENT_FORMAT = "\\Chunk{0},{1}.tyy";
 
         private static string segmentsPath;
 
@@ -23,7 +23,7 @@ namespace BananaTheGame.Control
             WorldName = worldName;
         }
 
-        public static void SaveChunk(Chunk chunk)
+        public void SaveChunk(Chunk chunk)
         {
             validateIntegrity();
             string filePath = string.Format(segmentsPath + SEGMENT_FORMAT, chunk.Position.X, chunk.Position.Z);
@@ -43,7 +43,12 @@ namespace BananaTheGame.Control
             stream.Close();
         }
 
-        public static Chunk LoadChunk(int x, int z)
+        public Chunk LoadChunk(Vector2Int location)
+        {
+            return LoadChunk(location.X, location.Z);
+        }
+
+        public Chunk LoadChunk(int x, int z)
         {
             validateIntegrity();
             Chunk blank = new Chunk(new Vector2Int(x, z));
@@ -53,19 +58,19 @@ namespace BananaTheGame.Control
             {
                 int row = seg % Chunk.SIZE;
                 int column = seg / Chunk.SIZE;
-                blank.Add(new Tile((TileType)level[seg], new Vector2Int(x, z) + new Vector2Int(row, column)));
+                blank.Add(new Tile((TileType)level[seg], blank.PositionInWorld + new Vector2Int(row, column)));
             }
 
             return blank;
         }
 
-        public static bool CheckIfSegementExists(int x, int z)
+        public bool CheckIfSegementExists(int x, int z)
         {
             validateIntegrity();
             return File.Exists(string.Format(segmentsPath + SEGMENT_FORMAT, x, z));
         }
 
-        private static void validateIntegrity()
+        private void validateIntegrity()
         {
             if (segmentsPath == "" || segmentsPath == null)
             {

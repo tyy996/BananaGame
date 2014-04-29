@@ -58,6 +58,7 @@ namespace BananaTheGame.Terrain.Processor
                         new Vector3(tile.Position.asVector2() + new Vector2(1, 1), 0)), tile.Type);
                 }
             }
+            chunk.State = ChunkState.AwaitingRender;
 
             //VertexPositionNormalTexture[] v = chunk.VertexList.ToArray();
             //short[] i = chunk.IndexList.ToArray();

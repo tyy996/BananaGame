@@ -37,7 +37,7 @@ namespace BananaTheGame.Control
 
             chunk = new Chunk(new Vector2Int(0, 0));
             renderer = new SimpleRenderer();
-            chunk.State = ChunkState.NotSoReady;
+            chunk.State = ChunkState.AwaitingRender;
 
             chunk.Add(new Tile(TileType.Floor, new Vector2Int(0, 0)));
 
